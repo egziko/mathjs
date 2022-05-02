@@ -819,6 +819,16 @@ declare namespace math {
     simplifyCore(expr: MathNode | string, options?: SimplifyOptions);
 
     /**
+     *  Replaces variable nodes with their scoped values
+     * @param node Tree to replace variable nodes in
+     * @param scope Scope to read/write variables
+     */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    resolve(node: MathNode, scope?: Record<string, any>): MathNode
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    resolve(node: MathNode[], scope?: Record<string, any>): MathNode[]
+
+    /**
      * Calculate the Sparse Matrix LU decomposition with full pivoting.
      * Sparse Matrix A is decomposed in two matrices (L, U) and two
      * permutation vectors (pinv, q) where P * A * Q = L * U
@@ -4066,6 +4076,13 @@ declare namespace math {
      * object.
      */
     parser(): MathJsChain
+
+    /**
+     *  Replaces variable nodes with their scoped values
+     * @param scope Scope to read/write variables
+     */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    resolve(scope?: Record<string, any>): MathJsChain
 
     /*************************************************************************
      * Algebra functions
