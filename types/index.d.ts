@@ -4759,10 +4759,7 @@ declare namespace math {
      * @param format The matrix storage format
      */
     ones(format?: string): MathJsChain
-    /**
-     * @param format The matrix storage format
-     */
-    ones(n: number, format?: string): MathJsChain
+
     /**
      * Partition-based selection of an array or 1D matrix. Will find the kth
      * smallest value, and mutates the input array. Uses Quickselect.
@@ -4869,11 +4866,6 @@ declare namespace math {
      * @returns A matrix filled with zeros
      */
     zeros(format?: string): MathJsChain
-    /**
-     * @param n The y dimension of the matrix
-     * @param format The matrix storage format
-     */
-    zeros(n: number, format?: string): MathJsChain
 
     /*************************************************************************
      * Probability functions
